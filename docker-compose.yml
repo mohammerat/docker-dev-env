@@ -1,11 +1,13 @@
+version: "3.7"
 services:
   web:
     build:
       context: .
       target: dev
-    volumes:
-      - ./:/code
     command: npm run dev
+    volumes:
+      - .:/code
+      - /code/node_modules/
     ports:
       - "8000:8000"
     environment:

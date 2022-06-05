@@ -7,7 +7,7 @@ COPY package*.json ./
 EXPOSE 8000
 
 FROM base as dev
-ENV NODE_ENV=development
+RUN npm install -g nodemon
 RUN npm install
-COPY . .
+COPY . ./
 CMD ["npm", "run", "dev"]
